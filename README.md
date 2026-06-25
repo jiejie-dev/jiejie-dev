@@ -1,6 +1,6 @@
 ### Hi there 👋, my name is JieJie
 #### I am Full Stack Engineer
-![I am Full Stack Engineer](https://arturssmirnovs.github.io/github-profile-readme-generator/images/banner.png)
+![I am Full Stack Engineer](./images/banner.png)
 
 I’m a self-motivated Full Stack Developer with experience covering web, desktop and cross-platform application development.
 I take charge of the entire development lifecycle: writing intuitive front-end interfaces, building robust back-end services, managing databases, configuring Docker environments and deploying projects online.
