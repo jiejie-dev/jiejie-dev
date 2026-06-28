@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JieJie.Dev // Full Stack Engineer</title>
+  <meta name="description" content="JieJie — Full Stack Engineer. Blog, projects, and notes on AI, web, and modern tech stacks." />
+  <meta name="author" content="JieJie" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%3C/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;600;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Matrix Rain Canvas -->
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+  <!-- Scanlines Overlay -->
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <!-- Floating particles -->
+  <div class="particles" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursor-follower" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">
+      <span class="logo-bracket">[</span>
+      <span class="logo-text">jiejie</span>
+      <span class="logo-cursor">_</span>
+      <span class="logo-bracket">]</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home" data-text="> home">> home</a></li>
+      <li><a href="#about" data-text="> about">> about</a></li>
+      <li><a href="#skills" data-text="> skills">> skills</a></li>
+      <li><a href="#blog" data-text="> blog">> blog</a></li>
+      <li><a href="#stats" data-text="> stats">> stats</a></li>
+      <li><a href="#contact" data-text="> contact">> contact</a></li>
+    </ul>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      <span class="status-text">ONLINE</span>
+    </div>
+  </nav>
+
+  <!-- Hero / Terminal Section -->
+  <section id="home" class="hero">
+    <div class="terminal">
+      <div class="terminal-header">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+        <span class="terminal-title">~/jiejie-dev — zsh</span>
+      </div>
+      <div class="terminal-body">
+        <div class="terminal-line">
+          <span class="prompt">jiejie@dev</span>:<span class="path">~</span>$
+          <span class="typed" id="typed-intro"></span><span class="caret">▌</span>
+        </div>
+        <div class="terminal-line delay-1">
+          <span class="prompt">jiejie@dev</span>:<span class="path">~</span>$
+          <span class="typed" id="typed-tagline"></span><span class="caret">▌</span>
+        </div>
+        <div class="terminal-line delay-2">
+          <span class="output success">✓ Profile loaded successfully.</span>
+        </div>
+        <div class="terminal-line delay-3">
+          <span class="output">Currently hacking on </span>
+          <span class="output highlight">AI-powered applications</span>
+          <span class="output"> and shipping side projects.</span>
+        </div>
+        <div class="terminal-line delay-4">
+          <span class="prompt">jiejie@dev</span>:<span class="path">~</span>$
+          <span class="cursor-blink">█</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-cta">
+      <a href="#blog" class="btn btn-primary">
+        <span class="btn-bracket">[</span>
+        <span class="btn-text">Read the blog</span>
+        <span class="btn-bracket">]</span>
+      </a>
+      <a href="#contact" class="btn btn-ghost">
+        <span class="btn-bracket">[</span>
+        <span class="btn-text">Get in touch</span>
+        <span class="btn-bracket">]</span>
+      </a>
+    </div>
+
+    <div class="scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about">
+    <div class="section-header">
+      <span class="section-tag">// 01</span>
+      <h2 class="section-title">ABOUT<span class="section-dot">.</span>ME</h2>
+      <span class="section-line"></span>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="lead">
+          <span class="highlight">Hi there</span> 👋, I'm
+          <span class="neon-text">JieJie</span> — a self-motivated
+          <span class="highlight">Full Stack Developer</span>.
+        </p>
+        <p>
+          I take charge of the entire development lifecycle: writing intuitive
+          front-end interfaces, building robust back-end services, managing
+          databases, configuring Docker environments and deploying projects
+          online.
+        </p>
+        <p>
+          In my spare time, I build personal side projects, contribute to open
+          source, and constantly explore modern tech stacks to expand my
+          technical boundaries.
+        </p>
+        <div class="about-stats">
+          <div class="stat-item">
+            <span class="stat-num" data-count="7">0</span>
+            <span class="stat-label">languages</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-count="∞">0</span>
+            <span class="stat-label">curiosity</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-count="100">0</span>
+            <span class="stat-suffix">%</span>
+            <span class="stat-label">passion</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-card">
+        <div class="card-inner">
+          <div class="card-glow"></div>
+          <div class="card-header">
+            <span class="card-icon">⚡</span>
+            <span class="card-title">dev_card.json</span>
+          </div>
+          <pre class="card-body"><code><span class="key">"name"</span>: <span class="string">"JieJie"</span>,
+<span class="key">"role"</span>: <span class="string">"Full Stack Engineer"</span>,
+<span class="key">"focus"</span>: <span class="string">"AI-powered apps"</span>,
+<span class="key">"loves"</span>: <span class="string">"shipping side projects"</span>,
+<span class="key">"open_to"</span>: <span class="string">"interesting collabs"</span>,
+<span class="key">"website"</span>: <span class="string">"jiejie.dev"</span></code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section skills">
+    <div class="section-header">
+      <span class="section-tag">// 02</span>
+      <h2 class="section-title">SKILL<span class="section-dot">.</span>STACK</h2>
+      <span class="section-line"></span>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card" data-skill="C#">
+        <div class="skill-bar"><div class="skill-fill" style="--w: 92%"></div></div>
+        <span class="skill-name">C#</span>
+        <span class="skill-cat">backend</span>
+      </div>
+      <div class="skill-card" data-skill="JAVA">
+        <div class="skill-bar"><div class="skill-fill" style="--w: 85%"></div></div>
+        <span class="skill-name">JAVA</span>
+        <span class="skill-cat">backend</span>
+      </div>
+      <div class="skill-card" data-skill="GO">
+        <div class="skill-bar"><div class="skill-fill" style="--w: 78%"></div></div>
+        <span class="skill-name">GO</span>
+        <span class="skill-cat">backend</span>
+      </div>
+      <div class="skill-card" data-skill="PYTHON">
+        <div class="skill-bar"><div class="skill-fill" style="--w: 88%"></div></div>
+        <span class="skill-name">PYTHON</span>
+        <span class="skill-cat">ai/script</span>
+      </div>
+      <div class="skill-card" data-skill="VUE JS">
+        <div class="skill-bar"><div class="skill-fill" style="--w: 90%"></div></div>
+        <span class="skill-name">VUE JS</span>
+        <span class="skill-cat">frontend</span>
+      </div>
+      <div class="skill-card" data-skill="REACT">
+        <div class="skill-bar"><div class="skill-fill" style="--w: 86%"></div></div>
+        <span class="skill-name">REACT</span>
+        <span class="skill-cat">frontend</span>
+      </div>
+      <div class="skill-card" data-skill="JS">
+        <div class="skill-bar"><div class="skill-fill" style="--w: 95%"></div></div>
+        <span class="skill-name">JS</span>
+        <span class="skill-cat">frontend</span>
+      </div>
+      <div class="skill-card" data-skill="HTML/CSS">
+        <div class="skill-bar"><div class="skill-fill" style="--w: 96%"></div></div>
+        <span class="skill-name">HTML / CSS</span>
+        <span class="skill-cat">frontend</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="section blog">
+    <div class="section-header">
+      <span class="section-tag">// 03</span>
+      <h2 class="section-title">LATEST<span class="section-dot">.</span>POSTS</h2>
+      <span class="section-line"></span>
+    </div>
+
+    <div class="blog-grid" id="blog-grid">
+      <!-- posts injected by JS -->
+    </div>
+
+    <div class="blog-footer">
+      <a href="https://github.com/jiejie-dev" target="_blank" rel="noopener" class="btn btn-ghost">
+        <span class="btn-bracket">[</span>
+        <span class="btn-text">More on GitHub</span>
+        <span class="btn-arrow">→</span>
+        <span class="btn-bracket">]</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section id="stats" class="section stats">
+    <div class="section-header">
+      <span class="section-tag">// 04</span>
+      <h2 class="section-title">GITHUB<span class="section-dot">.</span>STATS</h2>
+      <span class="section-line"></span>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card glow">
+        <img src="https://github-readme-stats.vercel.app/api?username=jiejie-dev&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d111700" alt="GitHub stats" loading="lazy" />
+      </div>
+      <div class="stat-card glow">
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jiejie-dev&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d111700" alt="Top languages" loading="lazy" />
+      </div>
+      <div class="stat-card glow streak">
+        <img src="https://streak-stats.demolab.com/?user=jiejie-dev&theme=tokyonight&hide_border=true&background=0d111700" alt="GitHub streak" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact">
+    <div class="section-header">
+      <span class="section-tag">// 05</span>
+      <h2 class="section-title">GET<span class="section-dot">.</span>IN_TOUCH</h2>
+      <span class="section-line"></span>
+    </div>
+
+    <div class="contact-wrap">
+      <p class="contact-lead">
+        <span class="prompt">$</span> ping
+        <span class="string">"jiejie-dev"</span>
+        <span class="comment"># always open to interesting ideas</span>
+      </p>
+
+      <div class="contact-links">
+        <a href="https://github.com/jiejie-dev" target="_blank" rel="noopener" class="contact-card" data-platform="github">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.18c-3.2.7-3.87-1.37-3.87-1.37-.52-1.34-1.27-1.7-1.27-1.7-1.04-.71.08-.69.08-.69 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.68 1.25 3.34.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 015.8 0c2.21-1.49 3.18-1.18 3.18-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.07.78 2.15v3.19c0 .31.21.68.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+          </div>
+          <span class="contact-name">GitHub</span>
+          <span class="contact-handle">@jiejie-dev</span>
+          <span class="contact-arrow">→</span>
+        </a>
+
+        <a href="https://jiejie.dev" target="_blank" rel="noopener" class="contact-card" data-platform="website">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <span class="contact-name">Website</span>
+          <span class="contact-handle">jiejie.dev</span>
+          <span class="contact-arrow">→</span>
+        </a>
+
+        <a href="mailto:hi@jiejie.dev" class="contact-card" data-platform="email">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <span class="contact-name">Email</span>
+          <span class="contact-handle">hi@jiejie.dev</span>
+          <span class="contact-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-text">
+        <span class="prompt">$</span> echo
+        <span class="string">"built with &lt;3 and caffeine by jiejie-dev"</span>
+      </span>
+      <span class="footer-year" id="footer-year"></span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
